@@ -4,22 +4,90 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>個人履歷 - 劉佩函</title>
+
 <style>
-body{font-family:Arial, sans-serif;margin:0;background:#f7f7f7;color:#333}
-header{background:#ffb6c1;color:white;text-align:center;padding:30px}
-section{max-width:900px;margin:auto;background:white;margin-top:20px;padding:20px;border-radius:10px;box-shadow:0 2px 6px rgba(0,0,0,0.1)}
-h2{border-bottom:2px solid #ffb6c1;padding-bottom:5px}
-.info{display:flex;flex-wrap:wrap;gap:10px}
-.info div{flex:1 1 200px}
-.skill{background:#ffe4ec;padding:6px 10px;border-radius:6px;display:inline-block;margin:4px}
-button{background:#ff6f91;border:none;color:white;padding:10px 16px;border-radius:6px;cursor:pointer}
-button:hover{opacity:0.8}
+body{
+    font-family:Arial, sans-serif;
+    margin:0;
+    background:#f7f7f7;
+    color:#333;
+}
+
+/* Header */
+header{
+    background:#ffb6c1;
+    color:white;
+    text-align:center;
+    padding:30px 20px;
+}
+
+/* 個人照片 */
+header img{
+    width:130px;
+    height:130px;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid white;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+    margin-bottom:10px;
+}
+
+/* 區塊 */
+section{
+    max-width:900px;
+    margin:auto;
+    background:white;
+    margin-top:20px;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+
+h2{
+    border-bottom:2px solid #ffb6c1;
+    padding-bottom:5px;
+}
+
+/* 基本資料 */
+.info{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.info div{
+    flex:1 1 200px;
+}
+
+/* 技能標籤 */
+.skill{
+    background:#ffe4ec;
+    padding:6px 10px;
+    border-radius:6px;
+    display:inline-block;
+    margin:4px;
+}
+
+/* 按鈕 */
+button{
+    background:#ff6f91;
+    border:none;
+    color:white;
+    padding:10px 16px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+button:hover{
+    opacity:0.8;
+}
 </style>
 </head>
+
 <body>
 
 <header>
-<img src="images/photo.jpg" alt="個人照片" style="width:120px;height:120px;border-radius:50%;object-fit:cover;margin-bottom:10px;"> 
+<img src="images/photo.jpg" alt="個人照片">
 <h1>劉佩函</h1>
 <p>亞洲大學 資訊傳播學系 學生</p>
 </header>
@@ -70,4 +138,11 @@ button:hover{opacity:0.8}
 </section>
 
 <script>
-function show
+function showContact(){
+    document.getElementById("contact").innerHTML = 
+    "Email：your@email.com<br>Instagram：@your_account";
+}
+</script>
+
+</body>
+</html>
