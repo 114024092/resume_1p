@@ -107,9 +107,17 @@ ul{
 </head>
 
 <body>
-<audio controls>
-    <source src="audio/m2.mp3" type="audio/mpeg">
+<audio id="bgm" autoplay loop muted>
+    <source src="m2.mp3" type="audio/mpeg">
 </audio>
+
+<script>
+window.addEventListener("click", () => {
+    const audio = document.getElementById("bgm");
+    audio.muted = false;
+    audio.play();
+});
+</script>
 
 <div class="container">
 
@@ -141,8 +149,8 @@ ul{
         <div class="block">
             <h2>關於我</h2>
             <p>
-            我是亞洲大學資訊傳播學系學生，專長於平面設計與品牌視覺。
-            風格偏向日系柔和設計，擅長簡約排版與包裝設計。
+            我是亞洲大學資訊傳播學系學生，專長是畫平面海報設計與品牌視覺。
+            個性隨和好相處，擅長簡約排版與平面設計。
             </p>
         </div>
 
