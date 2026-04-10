@@ -107,22 +107,29 @@ ul{
 </head>
 
 <body>
-<audio autoplay loop>
-    <source src="audio/m2.mp3" type="audio/mpeg">
-    您的瀏覽器不支援音樂播放
+<audio id="bgm" autoplay loop muted>
+    <source src="m2.mp3" type="audio/mpeg">
 </audio>
+
+<script>
+window.addEventListener("click", () => {
+    const audio = document.getElementById("bgm");
+    audio.muted = false;
+    audio.play();
+});
+</script>
 <div class="container">
 
     <!-- 左欄 -->
     <div class="sidebar">
-        <img src="images/photo.jpg">
+        <img src="images/17.jpg">
         <h1>劉佩函</h1>
-        <p>視覺傳達設計</p>
+        <p>114024092資訊傳播學系</p>
 
         <div class="section">
             <h3>聯絡</h3>
-            <p>your@email.com</p>
-            <p>@your_account</p>
+            <p>Email:114024092@live.asia.edu.tw</p>
+            <p>Phone:0987-654-321</p>
         </div>
 
         <div class="section">
@@ -160,7 +167,7 @@ ul{
             <h2>作品方向</h2>
             <ul>
                 <li>品牌視覺設計</li>
-                <li>包裝設計</li>
+                <li>海報排版</li>
                 <li>社群視覺</li>
                 <li>網站設計</li>
             </ul>
