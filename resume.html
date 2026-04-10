@@ -167,19 +167,24 @@ ul{
         <div class="block">
     <h2>互動</h2>
 
-    <div style="display:flex; align-items:center; gap:10px;">
-        <audio controls>
-            <source src="audio/m2.mp3" type="audio/mpeg">
-        </audio>
+    <script>
+function showContact(){
+    document.getElementById("contact").innerHTML = 
+    'Email：your@email.com<br>Instagram：@your_account';
+}
 
-        <button class="button" onclick="showContact()">顯示聯絡方式</button>
+// ⭐ 小驚喜功能
+function showSurprise(){
+    document.getElementById("surprise").style.display = "flex";
+}
 
-        <!-- 小驚喜按鈕 -->
-        <button class="button" onclick="showSurprise()">🎁 小驚喜</button>
-    </div>
-
-    <p id="contact"></p>
-</div>
+// 點背景關閉
+document.addEventListener("click", function(e){
+    if(e.target.id === "surprise"){
+        document.getElementById("surprise").style.display = "none";
+    }
+});
+</script>
 
     </div>
 
