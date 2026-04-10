@@ -107,20 +107,22 @@ ul{
 </head>
 
 <body>
-
-
+<audio autoplay loop>
+    <source src="audio/m2.mp3" type="audio/mpeg">
+    您的瀏覽器不支援音樂播放
+</audio>
 <div class="container">
 
     <!-- 左欄 -->
     <div class="sidebar">
-        <img src="images/17.jpg">
+        <img src="images/photo.jpg">
         <h1>劉佩函</h1>
-        <p>114024092資訊傳播學系</p>
+        <p>視覺傳達設計</p>
 
         <div class="section">
             <h3>聯絡</h3>
-            <p>Email:114024092@live.asia.edu.tw</p>
-            <p>phone:0987-654-321</p>
+            <p>your@email.com</p>
+            <p>@your_account</p>
         </div>
 
         <div class="section">
@@ -139,8 +141,8 @@ ul{
         <div class="block">
             <h2>關於我</h2>
             <p>
-            我是亞洲大學資訊傳播學系一年級的學生，專長是用麥克筆畫平面海報設計與品牌視覺。
-            個性隨和好相處有耐心，興趣是逛街追星看電影。
+            我是亞洲大學資訊傳播學系學生，專長於平面設計與品牌視覺。
+            風格偏向日系柔和設計，擅長簡約排版與包裝設計。
             </p>
         </div>
 
@@ -158,30 +160,28 @@ ul{
             <h2>作品方向</h2>
             <ul>
                 <li>品牌視覺設計</li>
-                <li>海報排版</li>
+                <li>包裝設計</li>
                 <li>社群視覺</li>
                 <li>網站設計</li>
             </ul>
         </div>
 
         <div class="block">
-    <div class="block">
-   <div class="block">
-    <h2>互動</h2>
+            <h2>互動</h2>
+            <button class="button" onclick="showContact()">顯示聯絡方式</button>
+            <p id="contact"></p>
+        </div>
 
-    <!-- 音樂播放器 -->
-    <audio controls style="margin:10px 0;">
-        <source src="m2.mp3" type="audio/mpeg">
-    </audio>
-
-    <button class="button" onclick="showContact()">顯示聯絡方式</button>
-    <p id="contact"></p>
-</div>
-
-
-
+    </div>
 
 </div>
+
+<script>
+function showContact(){
+    document.getElementById("contact").innerHTML = 
+    "Email：your@email.com<br>Instagram：@your_account";
+}
+</script>
 
 </body>
-</html>
+</html>  
