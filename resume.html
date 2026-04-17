@@ -98,38 +98,53 @@ ul{
     padding:10px 15px;
     border-radius:6px;
     cursor:pointer;
+    margin-top:10px;
 }
 
 .button:hover{
     opacity:0.8;
 }
+
+/* 音樂按鈕 */
+.music-btn{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#ff6f91;
+    color:white;
+    border:none;
+    border-radius:50%;
+    width:50px;
+    height:50px;
+    font-size:20px;
+    cursor:pointer;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
 </style>
 </head>
 
 <body>
-<audio id="bgm" autoplay loop muted>
-    <source src="m2.mp3" type="audio/mpeg">
+
+<!-- 🎧 背景音樂 -->
+<audio id="bgm" loop>
+    <source src="001.mp3" type="audio/mpeg">
 </audio>
 
-<script>
-window.addEventListener("click", () => {
-    const audio = document.getElementById("bgm");
-    audio.muted = false;
-    audio.play();
-});
-</script>
+<!-- 🎵 音樂按鈕 -->
+<button class="music-btn" onclick="toggleMusic()">🎵</button>
+
 <div class="container">
 
     <!-- 左欄 -->
     <div class="sidebar">
         <img src="images/17.jpg">
         <h1>劉佩函</h1>
-        <p>114024092資訊傳播學系</p>
+        <p>114024092 資訊傳播學系</p>
 
         <div class="section">
             <h3>聯絡</h3>
-            <p>Email:114024092@live.asia.edu.tw</p>
-            <p>interest:shopping、walking the dog、photography/p>
+            <p>Email：114024092@live.asia.edu.tw</p>
+            <p>興趣：購物、散步、攝影</p>
         </div>
 
         <div class="section">
@@ -148,8 +163,8 @@ window.addEventListener("click", () => {
         <div class="block">
             <h2>關於我</h2>
             <p>
-            我是亞洲大學資訊傳播學系學生，興趣是攝影、追星、追劇、逛街、吃美食、帶我家狗狗散步。
-            個性偏內向、溫和、順從，擅長簡約排版與海報設計。
+            我是亞洲大學資訊傳播學系學生，喜歡攝影、追劇與視覺設計。
+            個性溫和細心，擅長簡約風格與日系設計，期望未來朝視覺設計發展。
             </p>
         </div>
 
@@ -168,7 +183,7 @@ window.addEventListener("click", () => {
             <ul>
                 <li>品牌視覺設計</li>
                 <li>海報排版</li>
-                <li>社群視覺</li>
+                <li>社群設計</li>
                 <li>網站設計</li>
             </ul>
         </div>
@@ -184,11 +199,22 @@ window.addEventListener("click", () => {
 </div>
 
 <script>
+// 聯絡資訊
 function showContact(){
     document.getElementById("contact").innerHTML = 
-    "Email：your@email.com<br>Instagram：@your_account";
+    "Email：114024092@live.asia.edu.tw<br>Instagram：@your_account";
+}
+
+// 音樂控制
+function toggleMusic(){
+    const audio = document.getElementById("bgm");
+    if(audio.paused){
+        audio.play();
+    }else{
+        audio.pause();
+    }
 }
 </script>
 
 </body>
-</html>  
+</html>
