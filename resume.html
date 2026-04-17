@@ -37,6 +37,33 @@ body{
     border:4px solid white;
 }
 
+.sidebar h1{
+    margin:15px 0 5px;
+}
+
+.sidebar p{
+    font-size:14px;
+}
+
+.section{
+    margin-top:30px;
+    text-align:left;
+}
+
+.section h3{
+    border-bottom:2px solid white;
+    padding-bottom:5px;
+}
+
+.skill{
+    background:white;
+    display:inline-block;
+    padding:5px 10px;
+    border-radius:5px;
+    margin:5px 3px;
+    font-size:13px;
+}
+
 /* 右側 */
 .main{
     padding:30px;
@@ -51,7 +78,19 @@ body{
     padding-left:10px;
 }
 
-/* 按鈕 */
+ul{
+    padding-left:20px;
+}
+
+.timeline{
+    border-left:2px solid #ddd;
+    padding-left:15px;
+}
+
+.timeline div{
+    margin-bottom:15px;
+}
+
 .button{
     background:#ff6f91;
     color:white;
@@ -59,49 +98,94 @@ body{
     padding:10px 15px;
     border-radius:6px;
     cursor:pointer;
+    margin-top:10px;
 }
 
-/* 🎵 音樂按鈕（保證顯示） */
+.button:hover{
+    opacity:0.8;
+}
+
+/* 音樂按鈕 */
 .music-btn{
     position:fixed;
     bottom:20px;
     right:20px;
-    z-index:9999;
     background:#ff6f91;
     color:white;
     border:none;
     border-radius:50%;
-    width:55px;
-    height:55px;
-    font-size:22px;
+    width:50px;
+    height:50px;
+    font-size:20px;
     cursor:pointer;
-    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
 }
 </style>
 </head>
 
 <body>
 
-<!-- 🎧 音樂 -->
+<!-- 🎧 背景音樂 -->
 <audio id="bgm" loop>
     <source src="001.mp3" type="audio/mpeg">
 </audio>
 
-<!-- 🎵 按鈕（一定會看到） -->
+<!-- 🎵 音樂按鈕 -->
 <button class="music-btn" onclick="toggleMusic()">🎵</button>
 
 <div class="container">
 
+    <!-- 左欄 -->
     <div class="sidebar">
         <img src="images/17.jpg">
         <h1>劉佩函</h1>
-        <p>資訊傳播學系</p>
+        <p>114024092 資訊傳播學系</p>
+
+        <div class="section">
+            <h3>聯絡</h3>
+            <p>Email：114024092@live.asia.edu.tw</p>
+            <p>興趣：購物、散步、攝影</p>
+        </div>
+
+        <div class="section">
+            <h3>技能</h3>
+            <span class="skill">Photoshop</span>
+            <span class="skill">Illustrator</span>
+            <span class="skill">Figma</span>
+            <span class="skill">HTML</span>
+            <span class="skill">CSS</span>
+        </div>
     </div>
 
+    <!-- 右欄 -->
     <div class="main">
+
         <div class="block">
             <h2>關於我</h2>
-            <p>喜歡攝影與設計，擅長簡約與日系風格。</p>
+            <p>
+            我是亞洲大學資訊傳播學系學生，喜歡攝影、追劇與視覺設計。
+            個性溫和細心，擅長簡約風格與日系設計，期望未來朝視覺設計發展。
+            </p>
+        </div>
+
+        <div class="block">
+            <h2>學歷</h2>
+            <div class="timeline">
+                <div>
+                    <strong>亞洲大學</strong><br>
+                    資訊傳播學系
+                </div>
+            </div>
+        </div>
+
+        <div class="block">
+            <h2>作品方向</h2>
+            <ul>
+                <li>品牌視覺設計</li>
+                <li>海報排版</li>
+                <li>社群設計</li>
+                <li>網站設計</li>
+            </ul>
         </div>
 
         <div class="block">
@@ -109,18 +193,19 @@ body{
             <button class="button" onclick="showContact()">顯示聯絡方式</button>
             <p id="contact"></p>
         </div>
+
     </div>
 
 </div>
 
 <script>
-// 🎧 點擊任意地方自動播放（解決瀏覽器限制）
-document.body.addEventListener("click", () => {
-    const audio = document.getElementById("bgm");
-    audio.play();
-}, { once: true });
+// 聯絡資訊
+function showContact(){
+    document.getElementById("contact").innerHTML = 
+    "Email：114024092@live.asia.edu.tw<br>Instagram：@your_account";
+}
 
-// 🎵 按鈕控制
+// 音樂控制
 function toggleMusic(){
     const audio = document.getElementById("bgm");
     if(audio.paused){
@@ -128,12 +213,6 @@ function toggleMusic(){
     }else{
         audio.pause();
     }
-}
-
-// 聯絡資訊
-function showContact(){
-    document.getElementById("contact").innerHTML =
-    "Email：114024092@live.asia.edu.tw";
 }
 </script>
 
